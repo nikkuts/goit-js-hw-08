@@ -2,10 +2,7 @@
 import { galleryItems } from './gallery-items';
 // Change code below this line
 
-// Описаний в документації
-import SimpleLightbox from "";
-
-// Додатковий імпорт стилів
+import SimpleLightbox from "simplelightbox";
 import "simplelightbox/dist/simple-lightbox.min.css";
 
 console.log(galleryItems);
@@ -27,18 +24,4 @@ function createMarkup(items) {
     .join("");
 }
 
-galleryRef.addEventListener("click", onShowsImage);
-
-function onShowsImage(event) {
-    event.preventDefault();
-    if (event.target.nodeName !== 'IMG') {
-        return;
-    }
-    
-    const instance = basicLightbox.create(`
-    <img src=${event.target.dataset.source} width="800" height="600">
-    `)
-
-    instance.show()
-    console.log(event.target.dataset.source);
-}
+new SimpleLightbox('.gallery a');
