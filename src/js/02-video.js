@@ -1,1 +1,1 @@
-const newConst;
+const newConstant;
